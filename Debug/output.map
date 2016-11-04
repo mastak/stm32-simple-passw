@@ -2722,66 +2722,67 @@ LOAD /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.e
                 [!provide]                        PROVIDE (__fini_array_end, .)
                 0x0000000008001024                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x8 load address 0x0000000008001024
+.data           0x0000000020000000        0xc load address 0x0000000008001024
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
  .data          0x0000000020000000        0x4 Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
                 0x0000000020000000                SystemCoreClock
- .data          0x0000000020000004        0x3 Src/main.o
+ .data          0x0000000020000004        0x5 Src/main.o
                 0x0000000020000004                passw_length
                 0x0000000020000005                passw
  *(.data*)
-                0x0000000020000008                . = ALIGN (0x4)
- *fill*         0x0000000020000007        0x1 
-                0x0000000020000008                _edata = .
+                0x000000002000000c                . = ALIGN (0x4)
+ *fill*         0x0000000020000009        0x3 
+                0x000000002000000c                _edata = .
 
-.jcr            0x0000000020000008        0x0 load address 0x000000000800102c
- .jcr           0x0000000020000008        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
+.jcr            0x000000002000000c        0x0 load address 0x0000000008001030
+ .jcr           0x000000002000000c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
 
 .tm_clone_table
-                0x0000000020000008        0x0 load address 0x000000000800102c
+                0x000000002000000c        0x0 load address 0x0000000008001030
  .tm_clone_table
-                0x0000000020000008        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
+                0x000000002000000c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
  .tm_clone_table
-                0x0000000020000008        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtend.o
+                0x000000002000000c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtend.o
 
-.igot.plt       0x0000000020000008        0x0 load address 0x000000000800102c
- .igot.plt      0x0000000020000008        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
-                0x0000000020000008                . = ALIGN (0x4)
+.igot.plt       0x000000002000000c        0x0 load address 0x0000000008001030
+ .igot.plt      0x000000002000000c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
+                0x000000002000000c                . = ALIGN (0x4)
 
-.bss            0x0000000020000008       0x30 load address 0x000000000800102c
-                0x0000000020000008                _sbss = .
-                0x0000000020000008                __bss_start__ = _sbss
+.bss            0x000000002000000c       0x30 load address 0x0000000008001030
+                0x000000002000000c                _sbss = .
+                0x000000002000000c                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000008       0x1c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
- .bss           0x0000000020000024        0x1 Src/main.o
-                0x0000000020000024                is_opened
- *fill*         0x0000000020000025        0x3 
- .bss           0x0000000020000028        0x8 Src/stm32f4xx_it.o
-                0x0000000020000028                current_tick
-                0x000000002000002c                next_click_tick
+ .bss           0x000000002000000c       0x1c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.6.0.201601291255/tools/compiler/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m/fpu/crtbegin.o
+ .bss           0x0000000020000028        0x1 Src/main.o
+                0x0000000020000028                is_opened
+ *fill*         0x0000000020000029        0x3 
+ .bss           0x000000002000002c        0x8 Src/stm32f4xx_it.o
+                0x000000002000002c                current_tick
+                0x0000000020000030                next_click_tick
  *(.bss*)
  *(COMMON)
- COMMON         0x0000000020000030        0x4 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
-                0x0000000020000030                uwTick
- COMMON         0x0000000020000034        0x1 Src/stm32f4xx_it.o
-                0x0000000020000034                current_position
-                0x0000000020000038                . = ALIGN (0x4)
- *fill*         0x0000000020000035        0x3 
-                0x0000000020000038                _ebss = .
-                0x0000000020000038                __bss_end__ = _ebss
+ COMMON         0x0000000020000034        0x4 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+                0x0000000020000034                uwTick
+ COMMON         0x0000000020000038        0x1 Src/stm32f4xx_it.o
+                0x0000000020000038                current_position
+                0x000000002000003c                . = ALIGN (0x4)
+ *fill*         0x0000000020000039        0x3 
+                0x000000002000003c                _ebss = .
+                0x000000002000003c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000038      0x600 load address 0x000000000800102c
-                0x0000000020000038                . = ALIGN (0x8)
+                0x000000002000003c      0x604 load address 0x0000000008001030
+                0x0000000020000040                . = ALIGN (0x8)
+ *fill*         0x000000002000003c        0x4 
                 [!provide]                        PROVIDE (end, .)
                 [!provide]                        PROVIDE (_end, .)
-                0x0000000020000238                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000038      0x200 
-                0x0000000020000638                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000238      0x400 
-                0x0000000020000638                . = ALIGN (0x8)
+                0x0000000020000240                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000040      0x200 
+                0x0000000020000640                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000240      0x400 
+                0x0000000020000640                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)

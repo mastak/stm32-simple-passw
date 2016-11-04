@@ -36,12 +36,6 @@
 #include "stm32f4xx_it.h"
 
 /* USER CODE BEGIN 0 */
-// extern uint32_t t0;
-// extern uint32_t t1;
-// extern uint32_t t2;
-// extern uint32_t t3;
-// extern uint32_t state;
-
 extern buttons passw[];
 extern uint8_t passw_length;
 extern uint8_t is_opened;

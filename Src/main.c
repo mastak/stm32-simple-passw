@@ -43,17 +43,10 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-// buttons passw[] = {BTN0, BTN1, BTN2, BTN3};
-buttons passw[] = {BTN0, BTN1};
+buttons passw[] = {BTN0, BTN1, BTN2, BTN3};
 uint8_t passw_length = sizeof(passw)/sizeof(passw[0]);
 
 uint8_t is_opened = 0;
-
-// uint32_t t0 = 0,
-//         t1 = 0,
-//         t2 = 0,
-//         t3 = 0,
-//         state = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,10 +66,10 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  uint8_t state = 0;
 	uint32_t current_tick,
 			     next_time = 0;
-  uint8_t state = 0;
-
+  
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -100,17 +93,14 @@ int main(void)
   {
     if (state != is_opened) {
       state = is_opened;
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
     }
 
     current_tick = HAL_GetTick();
     if (next_time < current_tick) {
-      
-      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
       next_time =  current_tick + 800 - 400 * is_opened;
     }
-
-
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
