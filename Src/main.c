@@ -43,7 +43,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-buttons passw[] = {BTN0, BTN1, BTN2, BTN3};
+buttons passw[] = {BTN3, BTN0, BTN1, BTN2};
 uint8_t passw_length = sizeof(passw)/sizeof(passw[0]);
 
 uint8_t is_opened = 0;
