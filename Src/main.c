@@ -46,8 +46,12 @@
 buttons passw[] = {BTN3, BTN0, BTN1, BTN2};
 uint8_t passw_length = sizeof(passw)/sizeof(passw[0]);
 uint8_t current_position;
-
 uint8_t is_opened = 0;
+uint8_t state = 0;
+
+uint32_t input_end_tick = 0;
+
+void reset(void);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,11 +71,11 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  uint8_t state = 0;
 	uint32_t current_tick,
 			     next_blink_tick = 0,
            autoclose_tick = 0,
-           block_timeout_ticks = 4000;
+           autoclose_timeout_ticks = 5000,
+           input_limit_ticks = 5000;
   
   /* USER CODE END 1 */
 
@@ -96,22 +100,31 @@ int main(void)
   {
     current_tick = HAL_GetTick();
 
-    if (state != is_opened) {
-      state = is_opened;
-      autoclose_tick = current_tick + block_timeout_ticks;
-      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
-    }
-    else if (is_opened && autoclose_tick < current_tick) {
-      state = 0;
-      is_opened = 0;
-      current_position = 0;
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, 0);
+    // check timeout for input
+    if (current_position && current_position != passw_length) {
+      if (input_end_tick == 0) {
+        input_end_tick = current_tick + input_limit_ticks;
+      }
+      else if(input_end_tick < current_tick) {
+        reset();
+      }
     }
 
+    // toggle state
+    if (state != is_opened) {
+      state = is_opened;
+      autoclose_tick = current_tick + autoclose_timeout_ticks;
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
+    }
+    // reset state after auto close timeout
+    else if (is_opened && autoclose_tick < current_tick) {
+      reset();
+    }
     
+    // blink indicator
     if (next_blink_tick < current_tick) {
       HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-      next_blink_tick =  current_tick + 800 - 400 * is_opened;
+      next_blink_tick =  current_tick + (input_end_tick ? + 200 : 1000);
     }
   /* USER CODE END WHILE */
 
@@ -186,7 +199,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void reset(void) {
+  state = 0;
+  is_opened = 0;
+  current_position = 0;
+  input_end_tick = 0;
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, 0);
+}
 /* USER CODE END 4 */
 
 /**
