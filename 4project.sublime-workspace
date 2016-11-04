@@ -1,0 +1,334 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"init_callback"
+			],
+			[
+				"__ge",
+				"__getattribute__"
+			],
+			[
+				"__",
+				"__dict__"
+			],
+			[
+				"a",
+				"arguments"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"c",
+				"callback"
+			],
+			[
+				"fun",
+				"func2"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "IN",
+		"selected_items":
+		[
+			[
+				"IN",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Packege",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mastak/micro/source/4-code"
+	],
+	"file_history":
+	[
+		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/SublimeGDB.sublime-settings",
+		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/Users/mastak/micro/source/4-code/Src/main.c",
+		"/Users/mastak/micro/source/4-code/Src/stm32f4xx_it.c",
+		"/Users/mastak/micro/source/3-triggers/Src/stm32f4xx_it.c",
+		"/Users/mastak/micro/source/3-triggers/Src/main.c",
+		"/Users/mastak/micro/source/2-gpio/Src/main.c",
+		"/Users/mastak/sites/sps/item-service/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/sps/item-service/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/sps/item-location-service-core/shared/core/utils.py",
+		"/Users/mastak/sites/sps/item-service/itemservice/settings/unittest.py",
+		"/Users/mastak/sites/sps/item-location-service-core/shared/tests/test_domain.py",
+		"/Users/mastak/sites/sps/item-location-service-core/shared/core/domain.py",
+		"/Users/mastak/sites/sps/item-service/itemservice/core/item/item_factory.py",
+		"/Users/mastak/sites/sps/item-location-service-core/shared/tests/test_utils.py",
+		"/Users/mastak/sites/sps/item-location-service-core/build/docker/ci/run_test.sh",
+		"/Users/mastak/sites/sps/item-service/requirements/sps_common.txt",
+		"/Users/mastak/sites/sps/item-location-service-core/shared/tests/base_test_case.py",
+		"/Users/mastak/sites/sps/item-location-service-core/README.md",
+		"/Users/mastak/sites/sps/item-service/itemservice/core/item_history/__init__.py",
+		"/Users/mastak/sites/sps/item-service/itemservice/core/item_history/apps.py",
+		"/Users/mastak/sites/sps/item-location-service-core/build/docker/ci/Dockerfile_CI",
+		"/Users/mastak/sites/sps/item-location-service-core/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/sps/item-location-service-core/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/sps/item-location-service-core/.git/MERGE_MSG",
+		"/Users/mastak/.gitconfig",
+		"/Users/mastak/sites/smartbear/sync/docker-db-services/src/sql_consumer/main.py",
+		"/Users/mastak/sites/mastak/films-rating/chrome-extension/script.js",
+		"/Users/mastak/sites/forks/raven-aiohttp/.git/email = mail.EmailMessage('hello','test','alertsit",
+		"/Users/mastak/sites/smartbear/sync/docker-db-services/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/forks/python-mysql-replication/python-mysql-replication/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/forks/python-mysql-replication/python-mysql-replication/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/sync/docker-db-services/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/forks/raven-aiohttp/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/union/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/union/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/alertsite-environment/union/.gitignore",
+		"/Users/mastak/sites/smartbear/sync/sb-aws-migration/.git/DATABASES_NAMES=default,monitors",
+		"/Users/mastak/sites/smartbear/sentry-compose/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/sentry-compose/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/sync/sb-aws-migration/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alertsite-docker-environment/COMMIT_EDITMSG",
+		"/Users/mastak/Downloads/DB_scripts_sending_to_influxDB/influxdb-writer.py",
+		"/Users/mastak/Downloads/DB_scripts_sending_to_influxDB/docker-compose.yaml",
+		"/Users/mastak/sites/smartbear/sync/docker-db-services/compose/templates/consumer.hulk.yml.tpl",
+		"/Users/mastak/sites/smartbear/alertsite-environment/union/.jshintrc",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alert/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alert/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alert/MERGE_MSG",
+		"/Users/mastak/Downloads/dump.sql",
+		"/Users/mastak/sites/smartbear/alertsite-environment/id-provider/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/id-provider/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alert-api/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/alertsite-environment/.git/modules/alert-api/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/alertsite-environment/union/package.json",
+		"/Users/mastak/sites/smartbear/alertsite-environment/union/Gruntfile.js",
+		"/Users/mastak/sites/smartbear/aws_env/docker-env/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/aws_env/union/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/aws_env/union/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/aws_env/docker-env/.git/MERGE_MSG",
+		"/Users/mastak/.ssh/config",
+		"/Users/mastak/sites/smartbear/aws_env/alert-api/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/smartbear/aws_env/alert-api/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/out.cprof",
+		"/Users/mastak/Downloads/DB_scripts_sending_to_influxDB/check_slave_status.sh",
+		"/Users/mastak/Downloads/DB_scripts_sending_to_influxDB/get_var_lib_mysql_free_blocks.sh",
+		"/Users/mastak/sites/smartbear/aws_env/docker-env/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/old/code_empyre/deploy/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/old/checkio/checkio/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/old/checkio/checkio/requirements.txt",
+		"/Users/mastak/Documents/igortooth/planmeca_romexis_viewer/Start_Without_Launcher.bat",
+		"/Users/mastak/Documents/igortooth/planmeca_romexis_viewer/start_debug.sh",
+		"/Users/mastak/Downloads/tasks.py",
+		"/Users/mastak/Downloads/settings.py",
+		"/Users/mastak/sites/old/checkio/checkio/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/old/code_empyre/nginx-static/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/forks/python-mysql-replication/python-mysql-replication/.git/MERGE_MSG",
+		"/Users/mastak/sites/old/code_empyre/deploy/.git/rebase-merge/git-rebase-todo",
+		"/Users/mastak/sites/old/jenkins_home/config.xml",
+		"/Users/mastak/sites/old/jenkins_home/credentials.xml",
+		"/Users/mastak/sites/old/jenkins/secrets/master.key",
+		"/Users/mastak/sites/old/jenkins2/envInject.xml",
+		"/Users/mastak/sites/old/jenkins2/hudson.maven.MavenModuleSet.xml",
+		"/Users/mastak/sites/old/jenkins2/com.cloudbees.jenkins.GitHubPushTrigger.xml",
+		"/Users/mastak/sites/old/code_empyre/deploy/roles/common/jenkins/base/credentials.xml",
+		"/Users/mastak/sites/old/code_empyre/code-empire/devtools/images/db/dump.sql",
+		"/Users/mastak/sites/smartbear/aws_env/alert/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/aws_env/alert/.git/MERGE_MSG",
+		"/etc/hosts",
+		"/Users/mastak/sites/smartbear/docker-env-tmp/.gitignore",
+		"/Volumes/KINGSTON/Igor/smartbear/dev-env/docker/alert/configs/ipdrc",
+		"/Users/mastak/sites/smartbear/dev-env/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/smartbear/dev-env/.git/config",
+		"/Users/mastak/sites/smartbear/dev-env/.gitmodules",
+		"/Users/mastak/sites/smartbear/docker-utility-services/.git/COMMIT_EDITMSG",
+		"/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDocumentController.h",
+		"/Users/mastak/sites/forks/aioamqp/.git/COMMIT_EDITMSG",
+		"/Users/mastak/sites/forks/aioamqp/.git/rebase-merge/git-rebase-todo",
+		"/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/Headers/vForce.h",
+		"/Users/mastak/sites/git/aioamqp/.git/COMMIT_EDITMSG"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"last_click",
+			"DomainBuilder",
+			"DomainMetadata",
+			"4149625811383353",
+			"Array",
+			"secondIndex",
+			"# ",
+			"measurement",
+			"NO DATA",
+			"app.dir.union.static",
+			"ui_frame",
+			"build-notest",
+			"ui_frame",
+			"web",
+			"browserify",
+			"grunt-bump",
+			"grunt-conventional-changelog",
+			"\nHost docker03\n    HostName docker03.aws.alertsite.com\n    User mastak\n    ForwardAgent yes",
+			"direct_metrics"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/mastak/micro/source/4-code"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 250.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
