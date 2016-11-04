@@ -39,8 +39,7 @@
 extern buttons passw[];
 extern uint8_t passw_length;
 extern uint8_t is_opened;
-
-uint8_t current_position;
+extern uint8_t current_position;
 
 uint32_t next_click_tick = 0;
 uint32_t current_tick = 0;

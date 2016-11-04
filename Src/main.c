@@ -45,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 buttons passw[] = {BTN3, BTN0, BTN1, BTN2};
 uint8_t passw_length = sizeof(passw)/sizeof(passw[0]);
+uint8_t current_position;
 
 uint8_t is_opened = 0;
 /* USER CODE END PV */
@@ -68,7 +69,9 @@ int main(void)
   /* USER CODE BEGIN 1 */
   uint8_t state = 0;
 	uint32_t current_tick,
-			     next_time = 0;
+			     next_blink_tick = 0,
+           autoclose_tick = 0,
+           block_timeout_ticks = 4000;
   
   /* USER CODE END 1 */
 
@@ -91,15 +94,24 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    current_tick = HAL_GetTick();
+
     if (state != is_opened) {
       state = is_opened;
+      autoclose_tick = current_tick + block_timeout_ticks;
       HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
     }
+    else if (is_opened && autoclose_tick < current_tick) {
+      state = 0;
+      is_opened = 0;
+      current_position = 0;
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, 0);
+    }
 
-    current_tick = HAL_GetTick();
-    if (next_time < current_tick) {
+    
+    if (next_blink_tick < current_tick) {
       HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-      next_time =  current_tick + 800 - 400 * is_opened;
+      next_blink_tick =  current_tick + 800 - 400 * is_opened;
     }
   /* USER CODE END WHILE */
 
