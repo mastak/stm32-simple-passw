@@ -61,6 +61,7 @@ void check_press_position(buttons btn) {
     else {
       current_position = 0;
     }
+    is_opened = current_position == passw_length;
     next_click_tick = current_tick + read_delay;
   }
 }
@@ -157,12 +158,7 @@ void EXTI3_IRQHandler(void)
 void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
-  if (current_position == passw_length) {
-    is_opened = 1;
-  }
-  else {
-    is_opened = 0; 
-  }
+
   /* USER CODE END EXTI9_5_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */

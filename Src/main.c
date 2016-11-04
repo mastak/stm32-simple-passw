@@ -98,16 +98,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    // if (state != is_opened) {
-    //   state = is_opened;
-    //   HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
-    // }
+    if (state != is_opened) {
+      state = is_opened;
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+    }
 
     current_tick = HAL_GetTick();
     if (next_time < current_tick) {
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-      // next_time =  current_tick + 80 - 400 * is_opened;
-      next_time =  current_tick + 200;
+      
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_5);
+      next_time =  current_tick + 800 - 400 * is_opened;
     }
 
 
