@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"curr",
+				"current_tick"
+			],
+			[
+				"sta",
+				"state"
+			],
+			[
+				"pas",
+				"passw_length"
+			],
+			[
+				"cure",
+				"current_position"
+			],
+			[
+				"code",
+				"CODE"
+			],
+			[
+				"is",
+				"is_opened"
+			],
+			[
 				"in",
 				"init_callback"
 			],
@@ -35,6 +59,43 @@
 	},
 	"buffers":
 	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 10,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n  ******************************************************************************\n  * @file    stm32f4xx_it.c\n  * @brief   Interrupt Service Routines.\n  ******************************************************************************\n  *\n  * COPYRIGHT(c) 2016 STMicroelectronics\n  *\n  * Redistribution and use in source and binary forms, with or without modification,\n  * are permitted provided that the following conditions are met:\n  *   1. Redistributions of source code must retain the above copyright notice,\n  *      this list of conditions and the following disclaimer.\n  *   2. Redistributions in binary form must reproduce the above copyright notice,\n  *      this list of conditions and the following disclaimer in the documentation\n  *      and/or other materials provided with the distribution.\n  *   3. Neither the name of STMicroelectronics nor the names of its contributors\n  *      may be used to endorse or promote products derived from this software\n  *      without specific prior written permission.\n  *\n  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\n  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\n  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n  *\n  ******************************************************************************\n  */\n/* Includes ------------------------------------------------------------------*/\n#include \"stm32f4xx_hal.h\"\n#include \"stm32f4xx.h\"\n#include \"stm32f4xx_it.h\"\n\n/* USER CODE BEGIN 0 */\nextern buttons passw[];\nextern uint8_t passw_length;\nextern uint8_t is_opened;\nextern uint8_t current_position;\n\nuint32_t next_click_tick = 0;\nuint32_t current_tick = 0;\nconst uint32_t read_delay = 200;\n\nvoid check_press_position(buttons btn) {\n  current_tick = HAL_GetTick();\n  if (next_click_tick < current_tick) {\n    if (current_position < passw_length && passw[current_position] == btn) {\n      current_position++;\n    }\n    else {\n      current_position = 0;\n    }\n    is_opened = current_position == passw_length;\n    next_click_tick = current_tick + read_delay;\n  }\n}\n\n/* USER CODE END 0 */\n\n/* External variables --------------------------------------------------------*/\n\n/******************************************************************************/\n/*            Cortex-M4 Processor Interruption and Exception Handlers         */ \n/******************************************************************************/\n\n/**\n* @brief This function handles System tick timer.\n*/\nvoid SysTick_Handler(void)\n{\n  /* USER CODE BEGIN SysTick_IRQn 0 */\n\n  /* USER CODE END SysTick_IRQn 0 */\n  HAL_IncTick();\n  HAL_SYSTICK_IRQHandler();\n  /* USER CODE BEGIN SysTick_IRQn 1 */\n\n  /* USER CODE END SysTick_IRQn 1 */\n}\n\n/******************************************************************************/\n/* STM32F4xx Peripheral Interrupt Handlers                                    */\n/* Add here the Interrupt Handlers for the used peripherals.                  */\n/* For the available peripheral interrupt handler names,                      */\n/* please refer to the startup file (startup_stm32f4xx.s).                    */\n/******************************************************************************/\n\n/**\n* @brief This function handles EXTI line 0 interrupt.\n*/\nvoid EXTI0_IRQHandler(void)\n{\n  /* USER CODE BEGIN EXTI0_IRQn 0 */\n  is_opened = is_opened ? 0 : 1;\n  check_press_position(BTN0);\n  /* USER CODE END EXTI0_IRQn 0 */\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);\n  /* USER CODE BEGIN EXTI0_IRQn 1 */\n\n  /* USER CODE END EXTI0_IRQn 1 */\n}\n\n/**\n* @brief This function handles EXTI line 1 interrupt.\n*/\nvoid EXTI1_IRQHandler(void)\n{\n  /* USER CODE BEGIN EXTI1_IRQn 0 */\n  check_press_position(BTN1);\n  /* USER CODE END EXTI1_IRQn 0 */\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);\n  /* USER CODE BEGIN EXTI1_IRQn 1 */\n\n  /* USER CODE END EXTI1_IRQn 1 */\n}\n\n/**\n* @brief This function handles EXTI line 2 interrupt.\n*/\nvoid EXTI2_IRQHandler(void)\n{\n  /* USER CODE BEGIN EXTI2_IRQn 0 */\n  check_press_position(BTN2);\n  /* USER CODE END EXTI2_IRQn 0 */\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);\n  /* USER CODE BEGIN EXTI2_IRQn 1 */\n\n  /* USER CODE END EXTI2_IRQn 1 */\n}\n\n/**\n* @brief This function handles EXTI line 3 interrupt.\n*/\nvoid EXTI3_IRQHandler(void)\n{\n  /* USER CODE BEGIN EXTI3_IRQn 0 */\n  check_press_position(BTN3);\n  /* USER CODE END EXTI3_IRQn 0 */\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);\n  /* USER CODE BEGIN EXTI3_IRQn 1 */\n\n  /* USER CODE END EXTI3_IRQn 1 */\n}\n\n/**\n* @brief This function handles EXTI line[9:5] interrupts.\n*/\nvoid EXTI9_5_IRQHandler(void)\n{\n  /* USER CODE BEGIN EXTI9_5_IRQn 0 */\n\n  /* USER CODE END EXTI9_5_IRQn 0 */\n  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);\n  /* USER CODE BEGIN EXTI9_5_IRQn 1 */\n\n  /* USER CODE END EXTI9_5_IRQn 1 */\n}\n\n/* USER CODE BEGIN 1 */\n\n/* USER CODE END 1 */\n/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/\n",
+			"file": "Src/stm32f4xx_it.c",
+			"file_size": 5618,
+			"file_write_time": 131227666950000000,
+			"settings":
+			{
+				"buffer_size": 5486,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Src/gpio.c",
+			"settings":
+			{
+				"buffer_size": 4927,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Src/main.c",
+			"settings":
+			{
+				"buffer_size": 7474,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -44,7 +105,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "IN",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -64,9 +125,13 @@
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"sys.version",
+			"import sys",
+			"import sus",
+			"pwd"
 		]
 	},
 	"distraction_free":
@@ -80,15 +145,22 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/mastak/micro/source/4-code"
+		"/Users/mastak/micro/source/4-code",
+		"/Users/mastak/micro/source/4-code/Drivers",
+		"/Users/mastak/micro/source/4-code/Src"
 	],
 	"file_history":
 	[
+		"/Users/mastak/micro/source/4-code/Src/main.c",
+		"/Users/mastak/micro/source/4-code/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+		"/Users/mastak/micro/source/4-code/Src/gpio.c",
+		"/Users/mastak/micro/source/4-code/Src/stm32f4xx_it.c",
+		"/Users/mastak/micro/source/4-code/code.sublime-project",
+		"/Users/mastak/micro/source/4-code/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+		"/Users/mastak/micro/source/4-code/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
 		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/SublimeGDB.sublime-settings",
 		"/Users/mastak/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
-		"/Users/mastak/micro/source/4-code/Src/main.c",
-		"/Users/mastak/micro/source/4-code/Src/stm32f4xx_it.c",
 		"/Users/mastak/micro/source/3-triggers/Src/stm32f4xx_it.c",
 		"/Users/mastak/micro/source/3-triggers/Src/main.c",
 		"/Users/mastak/micro/source/2-gpio/Src/main.c",
@@ -188,20 +260,24 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			";\n",
+			"code",
+			";\n",
+			"read_delay",
 			"last_click",
 			"DomainBuilder",
 			"DomainMetadata",
@@ -238,8 +314,127 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								10
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Src/stm32f4xx_it.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2187,
+								2203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1811.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Src/gpio.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3341,
+								3341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 917.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Src/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3641,
+								3641
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1269.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -36,7 +36,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "lcd.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -45,8 +45,8 @@
 /* Private variables ---------------------------------------------------------*/
 buttons passw[] = {BTN3, BTN0, BTN1, BTN2};
 uint8_t passw_length = sizeof(passw)/sizeof(passw[0]);
-uint8_t current_position;
-uint8_t is_opened = 0;
+volatile uint8_t current_position;
+volatile uint8_t is_opened = 0;
 uint8_t state = 0;
 
 uint32_t input_end_tick = 0;
@@ -91,13 +91,15 @@ int main(void)
   MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-
+  LCD_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+	  LCD_Printf("yay\n");
     current_tick = HAL_GetTick();
 
     // check timeout for input
